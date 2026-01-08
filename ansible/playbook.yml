@@ -1,0 +1,35 @@
+---
+- name: Install and configure NGINX
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Update apt
+      apt:
+        update_cache: yes
+
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+
+    - name: Enable and start NGINX
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Exercício 1</title>
+          </head>
+          <body>
+              <h1>NGINX a funcionar!</h1>
+              <p>Provisionado com Terraform e configurado com Ansible.</p>
+          </body>
+          </html>
