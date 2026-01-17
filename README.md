@@ -1,3 +1,4 @@
+Glória Henriques 120843
 # Exercício 1 – Terraform e Ansible na Azure
 
 ## Objetivo
@@ -37,7 +38,5 @@ O objetivo deste exercício foi criar automaticamente uma máquina virtual Linux
 - A autenticação SSH é feita com chave pública
 - Ficheiros sensíveis e temporários do Terraform (`.terraform`, `.tfstate`) estão excluídos do repositório através do `.gitignore`
 
----
 
-## Estrutura do Projeto
 
